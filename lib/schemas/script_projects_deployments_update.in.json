@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "deploymentId": {
+            "required": true,
+            "type": "string"
+        },
+        "scriptId": {
+            "required": true,
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request with deployment information to update an existing deployment.",
+            "properties": {
+                "deploymentConfig": {
+                    "description": "The deployment configuration.",
+                    "properties": {
+                        "description": {
+                            "description": "The description for this deployment.",
+                            "type": "string"
+                        },
+                        "manifestFileName": {
+                            "description": "The manifest file name for this deployment.",
+                            "type": "string"
+                        },
+                        "scriptId": {
+                            "description": "The script project's Drive ID.",
+                            "type": "string"
+                        },
+                        "versionNumber": {
+                            "description": "The version number on which this deployment is based.",
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

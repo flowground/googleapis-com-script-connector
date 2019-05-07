@@ -1,0 +1,322 @@
+{
+    "title": "Apps Script",
+    "description": "Manages and executes Google Apps Script projects.\n",
+    "docsUrl": "https://developers.google.com/apps-script/api/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/script/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://script.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "script_processes_list": {
+            "main": "./lib/actions/script_processes_list.js",
+            "title": "List information about processes made by or on behalf of a user,\nsuch as process type and current status.",
+            "description": "List information about processes made by or on behalf of a user,\nsuch as process type and current status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_processes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_processes_listScriptProcesses": {
+            "main": "./lib/actions/script_processes_listScriptProcesses.js",
+            "title": "List information about a script's executed processes, such as process type\nand current status.",
+            "description": "List information about a script's executed processes, such as process type\nand current status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_processes_listScriptProcesses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_create": {
+            "main": "./lib/actions/script_projects_create.js",
+            "title": "Creates a new, empty script project with no script files and a base\nmanifest file.",
+            "description": "Creates a new, empty script project with no script files and a base\nmanifest file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_get": {
+            "main": "./lib/actions/script_projects_get.js",
+            "title": "Gets a script project's metadata.",
+            "description": "Gets a script project's metadata.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_getContent": {
+            "main": "./lib/actions/script_projects_getContent.js",
+            "title": "Gets the content of the script project, including the code source and\nmetadata for each script file.",
+            "description": "Gets the content of the script project, including the code source and\nmetadata for each script file.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_getContent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_updateContent": {
+            "main": "./lib/actions/script_projects_updateContent.js",
+            "title": "Updates the content of the specified script project.\nThis content is stored as the HEAD version, and is used when the script is\nexecuted as a trigger, in the script editor, in add-on preview mode, or as\na web app or Apps Script API in development mode. This clears all the\nexisting files in the project.",
+            "description": "Updates the content of the specified script project.\nThis content is stored as the HEAD version, and is used when the script is\nexecuted as a trigger, in the script editor, in add-on preview mode, or as\na web app or Apps Script API in development mode. This clears all the\nexisting files in the project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_updateContent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_deployments_list": {
+            "main": "./lib/actions/script_projects_deployments_list.js",
+            "title": "Lists the deployments of an Apps Script project.",
+            "description": "Lists the deployments of an Apps Script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_deployments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_deployments_create": {
+            "main": "./lib/actions/script_projects_deployments_create.js",
+            "title": "Creates a deployment of an Apps Script project.",
+            "description": "Creates a deployment of an Apps Script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_deployments_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_deployments_delete": {
+            "main": "./lib/actions/script_projects_deployments_delete.js",
+            "title": "Deletes a deployment of an Apps Script project.",
+            "description": "Deletes a deployment of an Apps Script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_deployments_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_deployments_get": {
+            "main": "./lib/actions/script_projects_deployments_get.js",
+            "title": "Gets a deployment of an Apps Script project.",
+            "description": "Gets a deployment of an Apps Script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_deployments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_deployments_update": {
+            "main": "./lib/actions/script_projects_deployments_update.js",
+            "title": "Updates a deployment of an Apps Script project.",
+            "description": "Updates a deployment of an Apps Script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_deployments_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_getMetrics": {
+            "main": "./lib/actions/script_projects_getMetrics.js",
+            "title": "Get metrics data for scripts, such as number of executions and\nactive users.",
+            "description": "Get metrics data for scripts, such as number of executions and\nactive users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_getMetrics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_versions_list": {
+            "main": "./lib/actions/script_projects_versions_list.js",
+            "title": "List the versions of a script project.",
+            "description": "List the versions of a script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_versions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_versions_create": {
+            "main": "./lib/actions/script_projects_versions_create.js",
+            "title": "Creates a new immutable version using the current code, with a unique\nversion number.",
+            "description": "Creates a new immutable version using the current code, with a unique\nversion number.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_versions_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_projects_versions_get": {
+            "main": "./lib/actions/script_projects_versions_get.js",
+            "title": "Gets a version of a script project.",
+            "description": "Gets a version of a script project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_projects_versions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "script_scripts_run": {
+            "main": "./lib/actions/script_scripts_run.js",
+            "title": "Runs a function in an Apps Script project. The script project must be\ndeployed for use with the Apps Script API and the calling application must\nshare the same Cloud Platform project.\n\nThis method requires authorization with an OAuth 2.0 token that includes at\nleast one of the scopes listed in the [Authorization](#authorization)\nsection; script projects that do not require authorization cannot be\nexecuted through this API. To find the correct scopes to include in the\nauthentication token, open the project in the script editor, then select\n**File > Project properties** and click the **Scopes** tab.\n\nThe error `403, PERMISSION_DENIED: The caller does not have permission`\nindicates that the Cloud Platform project used to authorize the request is\nnot the same as the one used by the script.",
+            "description": "Runs a function in an Apps Script project. The script project must be\ndeployed for use with the Apps Script API and the calling application must\nshare the same Cloud Platform project.\n\nThis method requires authorization with an OAuth 2.0 token that includes at\nleast one of the scopes listed in the [Authorization](#authorization)\nsection; script projects that do not require authorization cannot be\nexecuted through this API. To find the correct scopes to include in the\nauthentication token, open the project in the script editor, then select\n**File > Project properties** and click the **Scopes** tab.\n\nThe error `403, PERMISSION_DENIED: The caller does not have permission`\nindicates that the Cloud Platform project used to authorize the request is\nnot the same as the one used by the script.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/script_scripts_run.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

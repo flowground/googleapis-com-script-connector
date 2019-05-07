@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "pageSize": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "userProcessFilter_deploymentId": {
+            "type": "string"
+        },
+        "userProcessFilter_endTime": {
+            "type": "string"
+        },
+        "userProcessFilter_functionName": {
+            "type": "string"
+        },
+        "userProcessFilter_projectName": {
+            "type": "string"
+        },
+        "userProcessFilter_scriptId": {
+            "type": "string"
+        },
+        "userProcessFilter_startTime": {
+            "type": "string"
+        },
+        "userProcessFilter_statuses": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "PROCESS_STATUS_UNSPECIFIED",
+                    "RUNNING",
+                    "PAUSED",
+                    "COMPLETED",
+                    "CANCELED",
+                    "FAILED",
+                    "TIMED_OUT",
+                    "UNKNOWN",
+                    "DELAYED"
+                ],
+                "type": "string"
+            }
+        },
+        "userProcessFilter_types": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "PROCESS_TYPE_UNSPECIFIED",
+                    "ADD_ON",
+                    "EXECUTION_API",
+                    "TIME_DRIVEN",
+                    "TRIGGER",
+                    "WEBAPP",
+                    "EDITOR",
+                    "SIMPLE_TRIGGER",
+                    "MENU",
+                    "BATCH_TASK"
+                ],
+                "type": "string"
+            }
+        },
+        "userProcessFilter_userAccessLevels": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "USER_ACCESS_LEVEL_UNSPECIFIED",
+                    "NONE",
+                    "READ",
+                    "WRITE",
+                    "OWNER"
+                ],
+                "type": "string"
+            }
+        }
+    }
+}
