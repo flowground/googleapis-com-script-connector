@@ -5266,7 +5266,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://mail.google.com/": "Read, compose, send, and permanently delete all your email from Gmail",
@@ -5287,7 +5287,8 @@
                             "https://www.googleapis.com/auth/script.projects.readonly": "View Google Apps Script projects",
                             "https://www.googleapis.com/auth/spreadsheets": "See, edit, create, and delete your spreadsheets in Google Drive",
                             "https://www.googleapis.com/auth/userinfo.email": "View your email address"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }
